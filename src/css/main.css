@@ -1,0 +1,97 @@
+body {
+  background-color: pink;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+select {
+  margin-bottom: 20px;
+}
+
+.ss-main {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.ss-main .ss-values {
+  justify-content: center;
+}
+
+.ss-content .ss-list .ss-option {
+  justify-content: center;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+div.load,
+p.loader,
+p.error {
+  display: none;
+}
+
+div.load.active,
+p.loader.active,
+p.error.active {
+  display: block;
+}
+
+div.load {
+  position: relative;
+  margin: 20px auto 10px;
+  width: 200px;
+  height: 200px;
+}
+
+p.loader {
+  text-align: center;
+  width: 275px;
+}
+
+p.error {
+  text-align: center;
+}
+
+.cat-info {
+  display: flex;
+}
+
+.cat-descr {
+  margin-left: 15px;
+}
+
+img {
+  display: block;
+}
