@@ -54,9 +54,9 @@ function createBreedsList() {
       Notify.success('Hello!Find the furry one!');
     })
     .catch(err => {
-      console.log(err);
+      console.warn(err);
       refs.catBreedsList.style.visibility = 'hidden';
-      Notify.failure(`${refs.errorRef.textContent}`);
+      Notify.failure('Oops! Something went wrong! Try reloading the page!');
     });
 }
 
@@ -75,10 +75,10 @@ function createCatDescription() {
       Notify.success('An incredible choice');
     })
     .catch(err => {
-      console.log(err);
+      console.warn(err);
       handleLoadingDisable();
       refs.catBreedsList.style.visibility = 'hidden';
-      Notify.failure(`${refs.errorRef.textContent}`);
+      Notify.failure('Oops! Something went wrong! Try reloading the page!');
     });
 }
 
