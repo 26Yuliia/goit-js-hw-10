@@ -97,3 +97,19 @@ function renderDescription(data) {
     handleLoadingDisable();
   }, 900);
 }
+function createCatDescription() {
+  handleLoadingActive();
+  refs.catInfoRef.innerHTML = '';
+  let breedId = refs.catBreedsList.value;
+  fetchCatByBreed(breedId)
+    .then(data => {
+      if (data.length === 0) {
+        Notify.info('Oops! Something went wrong! Try reloading the page!');
+      }
+      renderDescription(data);
+    })
+    .catch(err => {
+      console.warn(err);
+      Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    });
+}
